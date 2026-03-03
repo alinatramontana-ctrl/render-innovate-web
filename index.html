@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi Web</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <!-- IMPORTANTE: header__inner NO debe ir con .container si tu CSS usa .header__inner propio -->
+    <div class="header__inner">
+      <a class="logo" href="#home">
+        <img src="assets/img/logo.svg" alt="Mi Logo">
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
+
+      <nav class="nav" id="nav">
+  <a href="#home">Home</a>
+  <a href="#nosotros">Nosotros</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#contacto" class="btn-nav">Contacto</a>
+</nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="slider" id="slider">
+
+      <div class="slide is-active" style="background-image:url('assets/img/hero1.webp');">
+        <div class="overlay"></div>
+        <div class="hero-content"></div>
+      </div>
+
+      <div class="slide" style="background-image:url('assets/img/hero2.webp');">
+        <div class="overlay"></div>
+        <div class="hero-content"></div>
+      </div>
+
+      <div class="slide" style="background-image:url('assets/img/hero3.webp');">
+        <div class="overlay"></div>
+        <div class="hero-content"></div>
+      </div>
+
+      <div class="slide" style="background-image:url('assets/img/hero4.webp');">
+        <div class="overlay"></div>
+        <div class="hero-content"></div>
+      </div>
+
+      <div class="slide" style="background-image:url('assets/img/hero5.webp');">
+        <div class="overlay"></div>
+        <div class="hero-content"></div>
+      </div>
+
+      <div class="dots" id="dots"></div>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <!-- Antes estaba mal: tenía id="servicios". Ahora es id="nosotros" y lo achicamos con clase -->
+  <section class="section section-nosotros" id="nosotros">
+    <div class="container reveal">
+      <h2>Quiénes somos</h2>
+      <p>
+        En Render Innovate 3D creemos que cada espacio tiene una historia que merece ser bien contada. Somos un estudio de
+        visualización arquitectónica liderado por mujeres apasionadas por el diseño, los detalles y la tecnología.
+        <br><br>
+        Acompañamos a profesionales, desarrolladoras inmobiliarias y particulares en la representación de sus ideas,
+        transformándolas en experiencias visuales que emocionan, comunican y venden. Creamos visualizaciones fotorrealistas
+        de interiores, exteriores y mobiliario a medida, así como recorridos 3D, experiencias 360° y propuestas inmersivas
+        que permiten vivir cada proyecto antes de que exista.
+        <br><br>
+        Nos mueve la idea de hacer el proceso fácil, claro y placentero, para que vos puedas enfocarte en lo que hacés mejor,
+        mientras nosotras damos vida a tu visión con precisión, sensibilidad y compromiso.
+        <br><br>
+        Nuestra misión es simple: lograr que cada rincón de tu hogar o negocio refleje tu personalidad y estilo, y que puedas
+        mostrarlo de una manera impactante, profesional e inolvidable.
+        <br><br>
+        Si estás listo para dar el salto y dejar que tu espacio brille, estamos aquí para hacerlo realidad.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <!-- Antes estaba "dark" y repetía id. Ahora es alt + section-servicios y se agranda -->
+  <section class="section section-alt section-servicios" id="servicios">
+    <div class="container">
+      <h2>Nuestros Servicios</h2>
+
+      <div class="cards reveal">
+        <!-- 1) MAQUETA VIRTUAL (con video) -->
+        <a class="card card-link" href="maqueta-virtual.html">
+          <div class="card-media">
+            <video class="card-video" autoplay muted loop playsinline>
+              <source src="assets/video/maqueta.mp4" type="video/mp4">
+              Tu navegador no soporta video.
+            </video>
+          </div>
+          <h3>Maqueta Virtual</h3>
+          <p>Showroom Digital Inmobiliario.</p>
+          <span class="card-cta">Ver más →</span>
+        </a>
+
+        <!-- 2) VISUALIZACIÓN ARQUITECTÓNICA (imagen) -->
+        <a class="card card-link" href="visualizacion-arquitectonica.html">
+          <div class="card-media">
+            <img class="card-img" src="assets/img/render1.webp" alt="Render de visualización arquitectónica">
+          </div>
+          <h3>Visualización Arquitectónica</h3>
+          <p>Renders, recorridos 360° y material comercial.</p>
+          <span class="card-cta">Ver más →</span>
+        </a>
+
+        <!-- 3) DISEÑO DE INTERIORES (imagen) -->
+        <a class="card card-link" href="diseno-interiores.html">
+          <div class="card-media">
+            <img class="card-img" src="assets/img/interiores1.webp" alt="Diseño de interiores">
+          </div>
+          <h3>Diseño de Interiores</h3>
+          <p>Propuestas de interiorismo con estilo, detalle y funcionalidad.</p>
+          <span class="card-cta">Ver más →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-alt" id="contacto">
+  <div class="container">
+    <h2>Contacto</h2>
+    <p class="section-subtitle">Dejanos tu consulta y te respondemos a la brevedad.</p>
+
+    <div class="contact-card">
+      <form class="contact-form" id="contactForm" action=https://formspree.io/f/mgolgwoe method="POST">
+        <!-- IMPORTANTE:
+             reemplazá XXXXX por tu ID real de Formspree (te explico abajo)
+        -->
+
+        <div class="field">
+          <label>NOMBRE Y APELLIDO</label>
+          <input type="text" name="nombre" placeholder="Tu nombre" required>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label>EMAIL</label>
+            <input type="email" name="email" placeholder="tu@email.com" required>
+          </div>
+
+          <div class="field">
+            <label>TELÉFONO</label>
+            <input type="tel" name="telefono" placeholder="+54 9 ..." required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>CONSULTA</label>
+          <textarea name="consulta" placeholder="Contanos qué estás buscando..." required></textarea>
+        </div>
+
+        <!-- Asunto del mail -->
+        <input type="hidden" name="_subject" value="Nueva consulta desde la web - Render Innovate 3D">
+
+        <div class="contact-actions">
+          <button type="submit" class="btn primary">ENVIAR</button>
+
+          <a class="btn secondary"
+             href="https://wa.me/5493413257303?text=Hola%20Render%20Innovate%203D%2C%20quiero%20hacer%20una%20consulta."
+             target="_blank" rel="noopener">
+            WHATSAPP
+          </a>
+
+          <a class="btn secondary" href="#home">VOLVER</a>
+        </div>
+
+        <p class="form-status" id="formStatus" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+  <footer class="footer">
+    <p>© 2026 Mi Web</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
