@@ -3,27 +3,41 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mi Web</title>
+
+  <title>Render Innovate 3D | Visualización Arquitectónica</title>
+  <meta name="description" content="Render Innovate 3D: visualización arquitectónica, recorridos 360°, maquetas virtuales y diseño de interiores para proyectos inmobiliarios." />
+
+  <!-- Favicon (opcional): poné un archivo en assets/img/favicon.png -->
+  <link rel="icon" href="assets/img/favicon.png" type="image/png" />
+
+  <!-- Open Graph (para WhatsApp/Redes) - opcional pero recomendado -->
+  <meta property="og:title" content="Render Innovate 3D | Visualización Arquitectónica" />
+  <meta property="og:description" content="Visualización arquitectónica, recorridos 360°, maquetas virtuales y diseño de interiores para vender proyectos." />
+  <!-- Poné una imagen para compartir en: assets/img/og-image.jpg (ideal 1200x630) -->
+  <meta property="og:image" content="assets/img/og-image.jpg" />
+  <meta property="og:type" content="website" />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
   <!-- HEADER -->
   <header class="header">
-    <!-- IMPORTANTE: header__inner NO debe ir con .container si tu CSS usa .header__inner propio -->
     <div class="header__inner">
       <a class="logo" href="#home">
-        <img src="assets/img/logo.svg" alt="Mi Logo">
+        <img src="assets/img/logo.svg" alt="Render Innovate 3D">
       </a>
 
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
 
       <nav class="nav" id="nav">
-  <a href="#home">Home</a>
-  <a href="#nosotros">Nosotros</a>
-  <a href="#servicios">Servicios</a>
-  <a href="#contacto" class="btn-nav">Contacto</a>
-</nav>
+        <a href="#home">Home</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto" class="btn-nav">Contacto</a>
+      </nav>
+    </div>
   </header>
 
   <!-- HERO -->
@@ -60,7 +74,6 @@
   </section>
 
   <!-- NOSOTROS -->
-  <!-- Antes estaba mal: tenía id="servicios". Ahora es id="nosotros" y lo achicamos con clase -->
   <section class="section section-nosotros" id="nosotros">
     <div class="container reveal">
       <h2>Quiénes somos</h2>
@@ -85,18 +98,17 @@
   </section>
 
   <!-- SERVICIOS -->
-  <!-- Antes estaba "dark" y repetía id. Ahora es alt + section-servicios y se agranda -->
   <section class="section section-alt section-servicios" id="servicios">
     <div class="container">
-      <h2>Nuestros Servicios</h2>
+      <h2 class="reveal">Nuestros Servicios</h2>
 
       <div class="cards reveal">
         <!-- 1) MAQUETA VIRTUAL (con video) -->
         <a class="card card-link" href="maqueta-virtual.html">
           <div class="card-media">
+            <!-- Tip: si querés, agregá poster="assets/img/maqueta-poster.webp" -->
             <video class="card-video" autoplay muted loop playsinline>
               <source src="assets/video/maqueta.mp4" type="video/mp4">
-              Tu navegador no soporta video.
             </video>
           </div>
           <h3>Maqueta Virtual</h3>
@@ -127,63 +139,59 @@
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- CONTACTO -->
   <section class="section section-alt" id="contacto">
-  <div class="container">
-    <h2>Contacto</h2>
-    <p class="section-subtitle">Dejanos tu consulta y te respondemos a la brevedad.</p>
+    <div class="container">
+      <h2>Contacto</h2>
+      <p class="section-subtitle">Dejanos tu consulta y te respondemos a la brevedad.</p>
 
-    <div class="contact-card">
-      <form class="contact-form" id="contactForm" action=https://formspree.io/f/mgolgwoe method="POST">
-        <!-- IMPORTANTE:
-             reemplazá XXXXX por tu ID real de Formspree (te explico abajo)
-        -->
+      <div class="contact-card">
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mgolgwoe" method="POST">
 
-        <div class="field">
-          <label>NOMBRE Y APELLIDO</label>
-          <input type="text" name="nombre" placeholder="Tu nombre" required>
-        </div>
-
-        <div class="field-row">
           <div class="field">
-            <label>EMAIL</label>
-            <input type="email" name="email" placeholder="tu@email.com" required>
+            <label>NOMBRE Y APELLIDO</label>
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label>EMAIL</label>
+              <input type="email" name="email" placeholder="tu@email.com" required>
+            </div>
+
+            <div class="field">
+              <label>TELÉFONO</label>
+              <input type="tel" name="telefono" placeholder="+54 9 ..." required>
+            </div>
           </div>
 
           <div class="field">
-            <label>TELÉFONO</label>
-            <input type="tel" name="telefono" placeholder="+54 9 ..." required>
+            <label>CONSULTA</label>
+            <textarea name="consulta" placeholder="Contanos qué estás buscando..." required></textarea>
           </div>
-        </div>
 
-        <div class="field">
-          <label>CONSULTA</label>
-          <textarea name="consulta" placeholder="Contanos qué estás buscando..." required></textarea>
-        </div>
+          <input type="hidden" name="_subject" value="Nueva consulta desde la web - Render Innovate 3D">
 
-        <!-- Asunto del mail -->
-        <input type="hidden" name="_subject" value="Nueva consulta desde la web - Render Innovate 3D">
+          <div class="contact-actions">
+            <button type="submit" class="btn primary">ENVIAR</button>
 
-        <div class="contact-actions">
-          <button type="submit" class="btn primary">ENVIAR</button>
+            <a class="btn secondary"
+               href="https://wa.me/5493413257303?text=Hola%20Render%20Innovate%203D%2C%20quiero%20hacer%20una%20consulta."
+               target="_blank" rel="noopener">
+              WHATSAPP
+            </a>
 
-          <a class="btn secondary"
-             href="https://wa.me/5493413257303?text=Hola%20Render%20Innovate%203D%2C%20quiero%20hacer%20una%20consulta."
-             target="_blank" rel="noopener">
-            WHATSAPP
-          </a>
+            <a class="btn secondary" href="#home">VOLVER</a>
+          </div>
 
-          <a class="btn secondary" href="#home">VOLVER</a>
-        </div>
-
-        <p class="form-status" id="formStatus" aria-live="polite"></p>
-      </form>
+          <p class="form-status" id="formStatus" aria-live="polite"></p>
+        </form>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <footer class="footer">
-    <p>© 2026 Mi Web</p>
+    <p>© 2026 Render Innovate 3D</p>
   </footer>
 
   <script src="script.js"></script>
