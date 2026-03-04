@@ -3,32 +3,131 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Visualizaciones arquitectonicas</title>
+  <title>Visualización Arquitectónica | Render Innovate 3D</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
 </head>
-<body>
 
-  <header class="header">
-    <div class="header__inner">
-      <a class="logo" href="index.html">
-        <img src="assets/img/logo.svg" alt="Render Innovate3D">
-      </a>
-      <nav class="nav">
-        <a href="index.html#home">Home</a>
-        <a href="index.html#nosotros">Nosotros</a>
-        <a href="index.html#servicios">Servicios</a>
-        <a href="index.html#contacto" class="btn-nav">Contacto</a>
-      </nav>
+<body class="page">
+
+  <!-- HEADER MINIMAL -->
+  <header class="header-min">
+    <a class="header-min__logo" href="index.html#home">
+      <img src="assets/img/logo.svg" alt="Render Innovate 3D">
+    </a>
+
+    <div class="header-min__actions">
+      <a class="header-min__link" href="index.html#servicios">← Volver</a>
+      <a class="header-min__btn" href="index.html#contacto">Cotizar</a>
     </div>
   </header>
 
-  <section class="section">
-    <div class="container">
-      <h2>Visualizaciones arquitectonicas</h2>
-      <p>Acá va el detalle del servicio. Podemos poner un video grande, galería, y botón a WhatsApp.</p>
-      <p><a href="index.html#servicios">← Volver</a></p>
-    </div>
+  <!-- 1) RENDER ESTÁTICO FULLSCREEN -->
+  <section class="page-hero" style="background-image:url('assets/img/va-hero.webp');">
+    <div class="page-hero__overlay"></div>
   </section>
 
+  <!-- 2) TEXTO -->
+  <section class="section page-intro">
+    <div class="container">
+      <h1 class="page-title">Visualización Arquitectónica</h1>
+      <p class="page-text">
+        Creamos visualizaciones fotorrealistas de interiores, exteriores y mobiliario a medida, así como recorridos 3D,
+        experiencias 360° y propuestas inmersivas que permiten vivir cada proyecto antes de que exista.
+      </p>
+    </div>
+  </section>
+  
+
+<!-- 3) GALERÍA FULLSCREEN -->
+<section class="gallery-full" id="galeria">
+  <div class="gallery" id="vaGallery">
+    <div class="g-slide is-active" style="background-image:url('assets/img/va-gal-1.webp');"></div>
+    <div class="g-slide" style="background-image:url('assets/img/va-gal-2.webp');"></div>
+    <div class="g-slide" style="background-image:url('assets/img/va-gal-3.webp');"></div>
+
+    <div class="g-dots" id="vaGalleryDots"></div>
+  </div>
+</section>
+<!-- 4) CTA GRANDE -->
+<section class="va-cta">
+  <div class="va-cta__inner">
+    <a href="index.html#contacto" class="va-cta__btn">
+      Cotizar proyecto
+    </a>
+  </div>
+</section>
+<!-- 5) BLOQUES EDITORIALES -->
+
+<section class="va-editorial">
+
+  <!-- RENDER -->
+  <div class="va-block reveal">
+    <div class="va-block__media" style="background-image:url('assets/img/va-render.webp');"></div>
+    <div class="va-block__content">
+      <h2>Render</h2>
+      <p>Imágenes fotorrealistas que transmiten atmósfera, materialidad y escala con máxima precisión visual.</p>
+    </div>
+  </div>
+
+  <!-- PLANTAS AMBIENTADAS -->
+  <div class="va-block va-block--reverse reveal">
+    <div class="va-block__media" style="background-image:url('assets/img/va-plantas.webp');"></div>
+    <div class="va-block__content">
+      <h2>Plantas Ambientadas</h2>
+      <p>Representaciones en planta con mobiliario, iluminación y texturas para comunicar espacialidad y funcionalidad.</p>
+    </div>
+  </div>
+
+  <!-- AXONOMETRÍAS -->
+  <div class="va-block reveal">
+    <div class="va-block__media" style="background-image:url('assets/img/va-axono.webp');"></div>
+    <div class="va-block__content">
+      <h2>Axonometrías</h2>
+      <p>Vistas técnicas y conceptuales que permiten comprender la estructura y composición del proyecto.</p>
+    </div>
+  </div>
+
+  <!-- RECORRIDO 360° -->
+  <div class="va-block va-block--reverse reveal">
+
+  <div class="va-block__media">
+    <div id="vaPano" class="va-pano"></div>
+  </div>
+
+  <div class="va-block__content">
+    <h2>Recorrido 360°</h2>
+    <p>
+      Experiencias inmersivas interactivas que permiten explorar cada ambiente
+      desde cualquier ángulo.
+    </p>
+  </div>
+
+</div>
+
+  <!-- VIDEOS -->
+  <div class="va-block reveal">
+
+  <div class="va-block__media va-video-wrap">
+
+    <video autoplay muted loop playsinline class="va-video">
+      <source src="assets/video/va-video.mp4" type="video/mp4">
+    </video>
+
+  </div>
+
+  <div class="va-block__content">
+    <h2>Videos</h2>
+    <p>
+      Recorridos animados que transmiten el proyecto de forma dinámica,
+      emocional y comercialmente impactante.
+    </p>
+  </div>
+
+</div>
+
+</section>
+<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

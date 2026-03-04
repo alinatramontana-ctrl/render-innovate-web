@@ -102,3 +102,71 @@ if (form) {
     }
   });
 }
+// ===== Galería fullscreen (Visualización Arquitectónica) =====
+(function initVAGallery(){
+  const gallery = document.getElementById("vaGallery");
+  const dotsWrap = document.getElementById("vaGalleryDots");
+  if (!gallery || !dotsWrap) return;
+
+  const slides = Array.from(gallery.querySelectorAll(".g-slide"));
+  const prevBtn = gallery.querySelector(".g-arrow-left");
+  const nextBtn = gallery.querySelector(".g-arrow-right");
+
+  let idx = slides.findIndex(s => s.classList.contains("is-active"));
+  if (idx < 0) idx = 0;
+
+  // Crear dots
+  dotsWrap.innerHTML = "";
+  slides.forEach((_, i) => {
+    const b = document.createElement("button");
+    b.className = "g-dot" + (i === idx ? " active" : "");
+    b.type = "button";
+    b.setAttribute("aria-label", `Ir a imagen ${i+1}`);
+    b.addEventListener("click", () => goTo(i));
+    dotsWrap.appendChild(b);
+  });
+
+  const dots = Array.from(dotsWrap.querySelectorAll(".g-dot"));
+
+  function goTo(i){
+    slides[idx].classList.remove("is-active");
+    dots[idx].classList.remove("active");
+
+    idx = (i + slides.length) % slides.length;
+
+    slides[idx].classList.add("is-active");
+    dots[idx].classList.add("active");
+  }
+
+  function next(){ goTo(idx + 1); }
+  function prev(){ goTo(idx - 1); }
+
+  nextBtn?.addEventListener("click", next);
+  prevBtn?.addEventListener("click", prev);
+
+  // Teclas
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") next();
+    if (e.key === "ArrowLeft") prev();
+  });
+
+  // Auto (opcional): descomentá si querés autoplay
+  setInterval(next, 6000);
+})();
+// VISOR 360°
+document.addEventListener("DOMContentLoaded", () => {
+
+  const pano = document.getElementById("vaPano");
+
+  if(pano){
+
+    pannellum.viewer('vaPano', {
+      type: 'equirectangular',
+      panorama: 'assets/img/va-360.webp',
+      autoLoad: true,
+      showControls: true
+    });
+
+  }
+
+});
