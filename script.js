@@ -170,3 +170,105 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+(function initVaPano(){
+  const el = document.getElementById("vaPano");
+  if (!el) return;
+
+  if (typeof pannellum === "undefined") {
+    console.warn("Pannellum no está disponible.");
+    return;
+  }
+
+  pannellum.viewer("vaPano", {
+    type: "equirectangular",
+    panorama: "assets/img/va-360.webp", // <- tu panorámica
+    autoLoad: true,
+    showControls: true,
+    hfov: 70
+  });
+})();
+// ===============================
+// SLIDER - ASESORÍA VIRTUAL (DI)
+// ===============================
+(function initAsesoriaSlider(){
+  const root = document.getElementById("asesoriaSlider");
+  if (!root) return;
+
+  const slides = Array.from(root.querySelectorAll(".di-slide"));
+  const dotsWrap = root.querySelector(".di-dots");
+  const btnPrev = root.querySelector(".di-arrow-left");
+  const btnNext = root.querySelector(".di-arrow-right");
+
+  let index = 0;
+  let timer = null;
+  const AUTOPLAY_MS = 4500; // cambialo o ponelo en 0 para apagar
+
+  // Crear dots
+  dotsWrap.innerHTML = "";
+  slides.forEach((_, i) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "di-dot" + (i === 0 ? " is-active" : "");
+    b.setAttribute("aria-label", "Ir a imagen " + (i + 1));
+    b.addEventListener("click", () => goTo(i));
+    dotsWrap.appendChild(b);
+  });
+
+  const dots = Array.from(root.querySelectorAll(".di-dot"));
+
+  function paint(){
+    slides.forEach((s, i) => s.classList.toggle("is-active", i === index));
+    dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
+  }
+
+  function goTo(i){
+    index = (i + slides.length) % slides.length;
+    paint();
+    restartAutoplay();
+  }
+
+  function next(){ goTo(index + 1); }
+  function prev(){ goTo(index - 1); }
+
+  btnNext.addEventListener("click", next);
+  btnPrev.addEventListener("click", prev);
+
+  // Autoplay
+  function startAutoplay(){
+    if (!AUTOPLAY_MS) return;
+    timer = setInterval(next, AUTOPLAY_MS);
+  }
+  function stopAutoplay(){
+    if (timer) clearInterval(timer);
+    timer = null;
+  }
+  function restartAutoplay(){
+    stopAutoplay();
+    startAutoplay();
+  }
+
+  // Pausa al hover (desktop)
+  root.addEventListener("mouseenter", stopAutoplay);
+  root.addEventListener("mouseleave", startAutoplay);
+
+  // Swipe en mobile
+  let x0 = null;
+  root.addEventListener("touchstart", (e) => {
+    x0 = e.touches[0].clientX;
+  }, { passive: true });
+
+  root.addEventListener("touchend", (e) => {
+    if (x0 == null) return;
+    const x1 = e.changedTouches[0].clientX;
+    const dx = x1 - x0;
+    x0 = null;
+
+    if (Math.abs(dx) > 40){
+      dx < 0 ? next() : prev();
+    }
+  }, { passive: true });
+
+  // Init
+  paint();
+  startAutoplay();
+})();

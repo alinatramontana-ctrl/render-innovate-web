@@ -12,15 +12,20 @@
 
   <!-- HEADER MINIMAL -->
   <header class="header-min">
-    <a class="header-min__logo" href="index.html#home">
+
+  <div class="header-min__logo">
+    <a href="index.html#home">
       <img src="assets/img/logo.svg" alt="Render Innovate 3D">
     </a>
+    <span class="header-min__title">Visualización Arquitectónica</span>
+  </div>
 
-    <div class="header-min__actions">
-      <a class="header-min__link" href="index.html#servicios">← Volver</a>
-      <a class="header-min__btn" href="index.html#contacto">Cotizar</a>
-    </div>
-  </header>
+  <div class="header-min__actions">
+    <a href="index.html#servicios" class="header-min__link">← Volver</a>
+    <a href="index.html#contacto" class="header-min__btn">Cotizar</a>
+  </div>
+
+</header>
 
   <!-- 1) RENDER ESTÁTICO FULLSCREEN -->
   <section class="page-hero" style="background-image:url('assets/img/va-hero.webp');">
@@ -89,7 +94,7 @@
   </div>
 
   <!-- RECORRIDO 360° -->
-  <div class="va-block va-block--reverse reveal">
+<div class="va-block va-block--reverse reveal">
 
   <div class="va-block__media">
     <div id="vaPano" class="va-pano"></div>

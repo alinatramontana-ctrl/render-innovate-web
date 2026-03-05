@@ -3,32 +3,195 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Maqueta Virtual</title>
+  <title>Maqueta Virtual - Render Innovate 3D</title>
+
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
 </head>
-<body>
 
-  <header class="header">
-    <div class="header__inner">
-      <a class="logo" href="index.html">
-        <img src="assets/img/logo.svg" alt="Render Innovate3D">
-      </a>
-      <nav class="nav">
-        <a href="index.html#home">Home</a>
-        <a href="index.html#nosotros">Nosotros</a>
-        <a href="index.html#servicios">Servicios</a>
-        <a href="index.html#contacto" class="btn-nav">Contacto</a>
-      </nav>
-    </div>
-  </header>
+<body class="page">
 
-  <section class="section">
-    <div class="container">
-      <h2>Maqueta Virtual</h2>
-      <p>Acá va el detalle del servicio. Podemos poner un video grande, galería, y botón a WhatsApp.</p>
-      <p><a href="index.html#servicios">← Volver</a></p>
+  <!-- HEADER MINIMAL (igual que VA) -->
+  <header class="header-min">
+
+  <div class="header-min__logo">
+    <a href="index.html#home">
+      <img src="assets/img/logo.svg" alt="Render Innovate 3D">
+    </a>
+    <span class="header-min__title">Maqueta Virtual</span>
+  </div>
+
+  <div class="header-min__actions">
+    <a href="index.html#servicios" class="header-min__link">← Volver</a>
+    <a href="index.html#contacto" class="header-min__btn">Cotizar</a>
+  </div>
+
+</header>
+
+  <!-- 1) HERO FULLSCREEN (VIDEO) -->
+  <section class="page-hero page-hero--video">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="assets/video/mv-hero.mp4" type="video/mp4">
+      Tu navegador no soporta video.
+    </video>
+    <div class="page-hero__overlay"></div>
+  </section>
+
+  <!-- 2) TEXTO -->
+  <section class="section page-intro">
+    <div class="container reveal">
+      <h1 class="page-title">Maqueta Virtual</h1>
+      <p class="page-text">
+        Creamos experiencias interactivas para presentar proyectos inmobiliarios de forma clara, atractiva y comercial.
+        Una maqueta virtual permite recorrer el proyecto, entender espacios y tomar decisiones con confianza antes de construir.
+      </p>
     </div>
   </section>
 
+  <!-- 3) PANORÁMICAS (3 escenas + hotspots + botones) -->
+  <section class="mv-pano-section">
+    <div class="mv-pano-wrap">
+      <div class="mv-pano-frame">
+        <div id="mvPano" class="va-pano"></div>
+      </div>
+
+      <div class="mv-pano-controls">
+        <button class="mv-pill is-active" type="button" data-scene="pano1">Vista 1</button>
+        <button class="mv-pill" type="button" data-scene="pano2">Vista 2</button>
+        <button class="mv-pill" type="button" data-scene="pano3">Vista 3</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4) CTA -->
+  <section class="va-cta">
+    <div class="va-cta__inner">
+      <a href="index.html#contacto" class="va-cta__btn">Cotizar proyecto</a>
+    </div>
+  </section>
+
+  <!-- 5) SECCIÓN FINAL (solo texto + video, intercalado) -->
+  <section class="va-editorial">
+
+    <!-- BLOQUE 1 (video izquierda) -->
+    <div class="va-block reveal">
+      <div class="va-block__media va-video-wrap">
+        <video class="va-video" autoplay muted loop playsinline>
+          <source src="assets/video/mv-demo.mp4" type="video/mp4">
+          Tu navegador no soporta video.
+        </video>
+      </div>
+
+      <div class="va-block__content">
+        <h2>Showroom Digital</h2>
+        <p>
+          Presentá tu proyecto como una experiencia: recorridos guiados, vistas clave y una navegación intuitiva
+          para que el cliente entienda el valor del desarrollo en segundos.
+        </p>
+      </div>
+    </div>
+
+    <!-- BLOQUE 2 (video derecha) -->
+    <div class="va-block va-block--reverse reveal">
+      <div class="va-block__media va-video-wrap">
+        <video class="va-video" autoplay muted loop playsinline>
+          <source src="assets/video/mv-demo-2.mp4" type="video/mp4">
+          Tu navegador no soporta video.
+        </video>
+      </div>
+
+      <div class="va-block__content">
+        <h2>Recorrido Interactivo</h2>
+        <p>
+          Una maqueta virtual permite explorar ambientes, comprender circulaciones y destacar puntos importantes
+          con hotspots para mejorar la comunicación y acelerar la decisión de compra.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- 6) CTA FINAL -->
+  <section class="va-cta">
+    <div class="va-cta__inner">
+      <a href="index.html#contacto" class="va-cta__btn">Cotizar proyecto</a>
+    </div>
+  </section>
+
+  <!-- PANNELLUM (antes del script.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+  <!-- INIT MAQUETA VIRTUAL PANO (puede ir en tu script.js o acá) -->
+  <script>
+  (function initMvPano(){
+    const panoEl = document.getElementById("mvPano");
+    if (!panoEl) return;
+
+    if (typeof pannellum === "undefined") {
+      console.warn("Pannellum no está disponible. ¿Está incluido el script CDN?");
+      return;
+    }
+
+    const pills = Array.from(document.querySelectorAll(".mv-pill[data-scene]"));
+    function setActive(sceneId){
+      pills.forEach(b => b.classList.toggle("is-active", b.getAttribute("data-scene") === sceneId));
+    }
+
+    const viewer = pannellum.viewer("mvPano", {
+      default: {
+        firstScene: "pano1",
+        sceneFadeDuration: 800,
+        autoLoad: true,
+        showControls: true
+      },
+      scenes: {
+        pano1: {
+          type: "equirectangular",
+          panorama: "assets/img/pano/pano1.webp",
+          hfov: 100,
+          hotSpots: [
+            { pitch: -30, yaw: 270, type: "info", text: "Habitación", sceneId: "pano2" },
+            { pitch: -5, yaw: -50, type: "scene", text: "Baño", sceneId: "pano3" }
+          ]
+        },
+        pano2: {
+          type: "equirectangular",
+          panorama: "assets/img/pano/pano2.webp",
+          hfov: 100,
+          hotSpots: [
+            { pitch: -20, yaw: -600, type: "scene", text: "Baño", sceneId: "pano3" },
+            { pitch: -20, yaw: 200, type: "scene", text: "Volver cocina", sceneId: "pano1" }
+          ]
+        },
+        pano3: {
+          type: "equirectangular",
+          panorama: "assets/img/pano/pano3.webp",
+          hfov: 100,
+          hotSpots: [
+            { pitch: -2, yaw: 10, type: "info", text: "Volver cocina", sceneId: "pano1" },
+            
+          ]
+        }
+      }
+    });
+
+    pills.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const scene = btn.getAttribute("data-scene");
+        viewer.loadScene(scene);
+        setActive(scene);
+      });
+    });
+
+    setActive("pano1");
+    viewer.on("load", () => {
+      const current = viewer.getScene();
+      if (current) setActive(current);
+    });
+  })();
+  </script>
+
+  <!-- Tu JS general -->
+  <script src="script.js"></script>
 </body>
 </html>

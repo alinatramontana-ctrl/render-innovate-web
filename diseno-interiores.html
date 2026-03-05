@@ -3,32 +3,196 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Diseño de Interiores</title>
+  <title>Diseño de Interiores - Render Innovate 3D</title>
+
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
 
-  <header class="header">
-    <div class="header__inner">
-      <a class="logo" href="index.html">
-        <img src="assets/img/logo.svg" alt="Render Innovate3D">
+<body class="page">
+
+<!-- HEADER -->
+<header class="header-min">
+
+  <div class="header-min__logo">
+    <a href="index.html#home">
+      <img src="assets/img/logo.svg" alt="Render Innovate 3D">
+    </a>
+    <span class="header-min__title">Diseño de Interiores</span>
+  </div>
+
+  <div class="header-min__actions">
+    <a href="index.html#servicios" class="header-min__link">← Volver</a>
+    <a href="index.html#contacto" class="header-min__btn">Cotizar</a>
+  </div>
+
+</header>
+
+
+<!-- HERO -->
+<section class="page-hero" style="background-image:url('assets/img/interiores-hero.webp');">
+  <div class="page-hero__overlay"></div>
+</section>
+
+
+<!-- INTRO -->
+<section class="section page-intro">
+  <div class="container reveal">
+
+    <h1 class="page-title">Diseño de Interiores</h1>
+
+    <p class="page-text">
+      Diseñamos espacios funcionales y estéticos pensados para tu forma de vivir.
+      Te acompañamos desde la idea inicial hasta la ejecución del proyecto,
+      combinando diseño, materialidad y atmósfera para crear ambientes únicos.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="va-cta">
+  <div class="va-cta__inner">
+    <a href="index.html#contacto" class="va-cta__btn">Cotizar proyecto</a>
+  </div>
+</section>
+
+
+<!-- SERVICIOS -->
+<section class="va-editorial">
+
+<!-- ASESORÍA VIRTUAL -->
+<div class="va-block reveal">
+
+  <div class="va-block__media di-slider" id="asesoriaSlider">
+    <div class="di-slides">
+      <div class="di-slide is-active"><img src="assets/img/asesoria/asesoria-1.webp" alt="Asesoría 1"></div>
+      <div class="di-slide"><img src="assets/img/asesoria/asesoria-2.webp" alt="Asesoría 2"></div>
+      <div class="di-slide"><img src="assets/img/asesoria/asesoria-3.webp" alt="Asesoría 3"></div>
+      <div class="di-slide"><img src="assets/img/asesoria/asesoria-4.webp" alt="Asesoría 4"></div>
+      <div class="di-slide"><img src="assets/img/asesoria/asesoria-5.webp" alt="Asesoría 5"></div>
+      <div class="di-slide"><img src="assets/img/asesoria/asesoria-6.webp" alt="Asesoría 6"></div>
+      <div class="di-slide"><img src="assets/img/asesoria/asesoria-7.webp" alt="Asesoría 7"></div>
+      <div class="di-slide"><img src="assets/img/asesoria/asesoria-8.webp" alt="Asesoría 8"></div>
+      <div class="di-slide"><img src="assets/img/asesoria/asesoria-9.webp" alt="Asesoría 9"></div>
+    </div>
+
+    <button class="di-arrow di-arrow-left" type="button" aria-label="Anterior">‹</button>
+    <button class="di-arrow di-arrow-right" type="button" aria-label="Siguiente">›</button>
+
+    <div class="di-dots" aria-label="Paginación"></div>
+  </div>
+
+  <div class="va-block__content">
+    <h2>Asesoría Virtual</h2>
+    <p>
+      Una consulta personalizada para ayudarte a tomar decisiones de diseño:
+      distribución, colores, iluminación, mobiliario y materiales.
+      Ideal para resolver dudas concretas y mejorar tus espacios sin necesidad
+      de una remodelación completa.
+    </p>
+  </div>
+
+</div>
+
+
+<!-- PROYECTO INTEGRAL -->
+<div class="va-block va-block--reverse reveal">
+
+  <div class="va-block__media"
+       style="background-image:url('assets/img/interiores-proyecto.webp');">
+  </div>
+
+  <div class="va-block__content">
+
+    <h2>Proyecto Integral</h2>
+
+    <p>
+      Desarrollo completo del diseño interior: concepto, distribución,
+      selección de materiales, iluminación, mobiliario y visualización del
+      espacio antes de ejecutarlo.
+      Transformamos ideas en proyectos claros y coherentes.
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- OBRA -->
+<div class="va-block reveal">
+
+  <div class="va-block__media"
+       style="background-image:url('assets/img/interiores-obra.webp');">
+  </div>
+
+  <div class="va-block__content">
+
+    <h2>Obra & Acompañamiento</h2>
+
+    <p>
+      Acompañamos la ejecución del proyecto para asegurar que el diseño
+      se materialice correctamente. Seguimiento de obra, decisiones en
+      sitio y coordinación con proveedores para lograr el resultado
+      esperado.
+    </p>
+
+  </div>
+
+</div>
+
+</section>
+
+<!-- GALERÍA EDITORIAL -->
+<section class="section" id="galeria-interiores">
+  <div class="container">
+    <h2 class="reveal">Galería</h2>
+    <p class="section-subtitle reveal">Algunos interiores, estilos y atmósferas que trabajamos.</p>
+
+    <div class="editorial-gallery reveal">
+
+      <a class="eg-item eg-item--lg" href="assets/img/interior-1.webp" target="_blank">
+        <img src="assets/img/interior-1.webp" alt="Interior 1">
       </a>
-      <nav class="nav">
-        <a href="index.html#home">Home</a>
-        <a href="index.html#nosotros">Nosotros</a>
-        <a href="index.html#servicios">Servicios</a>
-        <a href="index.html#contacto" class="btn-nav">Contacto</a>
-      </nav>
-    </div>
-  </header>
 
-  <section class="section">
-    <div class="container">
-      <h2>Diseño de Interiores</h2>
-      <p>Acá va el detalle del servicio. Podemos poner un video grande, galería, y botón a WhatsApp.</p>
-      <p><a href="index.html#servicios">← Volver</a></p>
-    </div>
-  </section>
+      <a class="eg-item eg-item--tall" href="assets/img/interior-2.webp" target="_blank">
+  <img src="assets/img/interior-2.webp" alt="Interior 2">
+</a>
+
+      <a class="eg-item" href="assets/img/interior-3.webp" target="_blank">
+        <img src="assets/img/interior-3.webp" alt="Interior 3">
+      </a>
+
+      <a class="eg-item" href="assets/img/interior-4.webp" target="_blank">
+        <img src="assets/img/interior-4.webp" alt="Interior 4">
+      </a>
+
+      <a class="eg-item eg-item--lg" href="assets/img/interior-5.webp" target="_blank">
+        <img src="assets/img/interior-5.webp" alt="Interior 5">
+      </a>
+
+      <a class="eg-item" href="assets/img/interior-6.webp" target="_blank">
+        <img src="assets/img/interior-6.webp" alt="Interior 6">
+      </a>
+      <a class="eg-item" href="assets/img/interior-7.webp" target="_blank">
+        <img src="assets/img/interior-7.webp" alt="Interior 7">
+      </a>
+      <a class="eg-item" href="assets/img/interior-8.webp" target="_blank">
+        <img src="assets/img/interior-8.webp" alt="Interior 8">
+      </a>
+     
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="va-cta">
+  <div class="va-cta__inner">
+    <a href="index.html#contacto" class="va-cta__btn">Cotizar proyecto</a>
+  </div>
+</section>
+
+
+<script src="script.js"></script>
 
 </body>
 </html>

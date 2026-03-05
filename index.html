@@ -22,23 +22,22 @@
 
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="header__inner">
-      <a class="logo" href="#home">
-        <img src="assets/img/logo.svg" alt="Render Innovate 3D">
-      </a>
+  <!-- HEADER (igual al de páginas internas) -->
+<header class="header-min header-min--home">
+  <a class="header-min__logo" href="#home">
+    <img src="assets/img/logo.svg" alt="Render Innovate 3D">
+  </a>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
 
-      <nav class="nav" id="nav">
-        <a href="#home">Home</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#contacto" class="btn-nav">Contacto</a>
-      </nav>
-    </div>
-  </header>
+  <nav class="nav" id="nav">
+    <a href="#home">Home</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#proyecto-destacado">Proyectos Destacados</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
 
   <!-- HERO -->
   <section class="hero" id="home">
@@ -115,6 +114,7 @@
           <p>Showroom Digital Inmobiliario.</p>
           <span class="card-cta">Ver más →</span>
         </a>
+        
 
         <!-- 2) VISUALIZACIÓN ARQUITECTÓNICA (imagen) -->
         <a class="card card-link" href="visualizacion-arquitectonica.html">
@@ -138,6 +138,41 @@
       </div>
     </div>
   </section>
+  <!-- PROYECTO DESTACADO -->
+<section class="section" id="proyecto-destacado">
+  <div class="container">
+
+    <h2 class="reveal">Proyecto Destacado</h2>
+
+    <div class="featured-project reveal">
+
+      <div class="featured-project__media">
+        <img src="assets/img/proyecto-edificio.webp" alt="Edificio Innovate">
+      </div>
+
+      <div class="featured-project__content">
+
+        <h3>Edificio Innovate</h3>
+
+        <p>
+          Explorá una experiencia completa de maqueta virtual interactiva.
+          Navegá los espacios del proyecto, descubrí sus ambientes y viví el
+          edificio antes de que exista.
+        </p>
+
+        <a 
+          href="https://edificioinnovate.vercel.app/" 
+          class="btn primary"
+          target="_blank">
+          Explorar proyecto
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
   <!-- CONTACTO -->
   <section class="section section-alt" id="contacto">
