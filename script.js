@@ -271,4 +271,51 @@ document.addEventListener("DOMContentLoaded", () => {
   // Init
   paint();
   startAutoplay();
+})();// =============================
+// SLIDERS (Asesoría + Obra + cualquiera)
+// =============================
+(function initDiSliders(){
+  const sliders = document.querySelectorAll("[data-di-slider]");
+  if (!sliders.length) return;
+
+  sliders.forEach((slider) => {
+    const slides = Array.from(slider.querySelectorAll(".di-slide"));
+    const dotsWrap = slider.querySelector(".di-dots");
+    const prevBtn = slider.querySelector(".di-arrow-left");
+    const nextBtn = slider.querySelector(".di-arrow-right");
+
+    if (!slides.length || !dotsWrap || !prevBtn || !nextBtn) return;
+
+    let index = slides.findIndex(s => s.classList.contains("is-active"));
+    if (index < 0) index = 0;
+
+    // Crear dots
+    dotsWrap.innerHTML = "";
+    const dots = slides.map((_, i) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "di-dot" + (i === index ? " is-active" : "");
+      b.addEventListener("click", () => goTo(i));
+      dotsWrap.appendChild(b);
+      return b;
+    });
+
+    function paint(){
+      slides.forEach((s, i) => s.classList.toggle("is-active", i === index));
+      dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
+    }
+
+    function goTo(i){
+      index = (i + slides.length) % slides.length;
+      paint();
+    }
+
+    function next(){ goTo(index + 1); }
+    function prev(){ goTo(index - 1); }
+
+    nextBtn.addEventListener("click", next);
+    prevBtn.addEventListener("click", prev);
+
+    paint();
+  });
 })();
