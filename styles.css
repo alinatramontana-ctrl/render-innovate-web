@@ -229,7 +229,7 @@ body{
 }
 
 .section p{
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.9;
   max-width: 1100px;
   margin: 0 auto;
@@ -974,7 +974,7 @@ body{
 }
 
 .featured-project__content p{
-  font-size:18px;
+  font-size:16px;
   line-height:1.8;
   margin-bottom:24px;
   color:#374151;
