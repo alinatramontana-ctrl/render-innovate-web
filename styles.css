@@ -1,13 +1,19 @@
 /* =========================
    BASE
 ========================= */
+body,
+button,
+input,
+textarea{
+  font-family: 'Open Sans', sans-serif;
+}
 * { box-sizing: border-box; }
 
 html, body { overflow-x: hidden; }
 
 body{
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background: #ffffff;
   color: #1f2937;
 }
