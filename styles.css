@@ -1472,3 +1472,625 @@ html{
     max-width: 100%;
   }
 }
+/* =========================================================
+   MAQUETA VIRTUAL — AJUSTES SOLO MOBILE
+   (desktop queda igual)
+========================================================= */
+
+@media (max-width: 768px) {
+
+  /* ---------- Header ---------- */
+  .header-min {
+    padding: 14px 16px;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-min__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    flex: 1 1 100%;
+  }
+
+  .header-min__logo img {
+    max-height: 34px;
+    width: auto;
+  }
+
+  .header-min__title {
+    font-size: 0.95rem;
+    line-height: 1.2;
+  }
+
+  .header-min__actions {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-min__link,
+  .header-min__btn {
+    font-size: 0.92rem;
+    white-space: nowrap;
+  }
+
+  .header-min__btn {
+    padding: 10px 14px;
+  }
+
+  /* ---------- Hero ---------- */
+  .page-hero--video {
+    min-height: 58vh;
+  }
+
+  .hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* ---------- Intro ---------- */
+  .page-intro {
+    padding: 52px 20px 36px;
+  }
+
+  .page-intro .container {
+    width: 100%;
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 7vw, 2.8rem);
+    line-height: 1.05;
+    margin-bottom: 18px;
+  }
+
+  .page-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 100%;
+  }
+
+  /* ---------- Panorámica ---------- */
+  .mv-pano-section {
+    padding: 10px 16px 40px;
+  }
+
+  .mv-pano-wrap {
+    width: 100%;
+  }
+
+  .mv-pano-frame {
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  /* importante para que el viewer no quede gigante ni muy bajo */
+  .va-pano,
+  #mvPano {
+    width: 100%;
+    height: 52vh;
+    min-height: 320px;
+    max-height: 500px;
+  }
+
+  .mv-pano-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .mv-pill {
+    flex: 1 1 calc(50% - 10px);
+    min-width: 120px;
+    text-align: center;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+
+  /* ---------- CTA ---------- */
+  .va-cta {
+    padding: 28px 16px;
+  }
+
+  .va-cta__inner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .va-cta__btn {
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+    padding: 14px 18px;
+  }
+
+  /* ---------- Editorial / bloques ---------- */
+  .va-editorial {
+    padding: 20px 16px 10px;
+  }
+
+  .va-block,
+  .va-block.va-block--reverse {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+
+  .va-block__media,
+  .va-block__content {
+    width: 100%;
+  }
+
+  .va-video-wrap {
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .va-video {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .va-block__content h2 {
+    font-size: 1.5rem;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+
+  .va-block__content p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
+
+
+/* =========================================================
+   CELULARES CHICOS
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .header-min {
+    padding: 12px 14px;
+  }
+
+  .header-min__logo {
+    gap: 8px;
+  }
+
+  .header-min__title {
+    font-size: 0.88rem;
+  }
+
+  .header-min__actions {
+    gap: 8px;
+  }
+
+  .header-min__link,
+  .header-min__btn {
+    font-size: 0.86rem;
+  }
+
+  .header-min__btn {
+    padding: 9px 12px;
+  }
+
+  .page-hero--video {
+    min-height: 48vh;
+  }
+
+  .page-intro {
+    padding: 42px 16px 30px;
+  }
+
+  .page-title {
+    font-size: clamp(1.8rem, 8vw, 2.3rem);
+  }
+
+  .page-text {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .va-pano,
+  #mvPano {
+    height: 44vh;
+    min-height: 280px;
+  }
+
+  .mv-pano-controls {
+    gap: 8px;
+  }
+
+  .mv-pill {
+    flex: 1 1 100%;
+    min-width: unset;
+    font-size: 0.92rem;
+    padding: 11px 12px;
+  }
+
+  .va-block {
+    gap: 18px;
+    margin-bottom: 40px;
+  }
+
+  .va-block__content h2 {
+    font-size: 1.3rem;
+  }
+
+  .va-block__content p {
+    font-size: 0.96rem;
+  }
+
+  .va-cta__btn {
+    padding: 13px 16px;
+    font-size: 0.95rem;
+  }
+}/* =========================================================
+   VISUALIZACIÓN ARQUITECTÓNICA + DISEÑO DE INTERIORES
+   AJUSTES SOLO MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  /* ---------- Header minimal de páginas internas ---------- */
+  .header-min {
+    padding: 14px 16px;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-min__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    flex: 1 1 100%;
+  }
+
+  .header-min__logo img {
+    max-height: 34px;
+    width: auto;
+  }
+
+  .header-min__title {
+    font-size: 0.95rem;
+    line-height: 1.2;
+  }
+
+  .header-min__actions {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-min__link,
+  .header-min__btn {
+    font-size: 0.92rem;
+    white-space: nowrap;
+  }
+
+  .header-min__btn {
+    padding: 10px 14px;
+  }
+
+  /* ---------- Hero internas ---------- */
+  .page-hero,
+  .page-hero--video,
+  .va-hero,
+  .di-hero {
+    min-height: 55vh;
+  }
+
+  .page-hero img,
+  .page-hero video,
+  .hero-video,
+  .va-hero img,
+  .va-hero video,
+  .di-hero img,
+  .di-hero video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* ---------- Intro / texto ---------- */
+  .page-intro,
+  .va-intro,
+  .di-intro {
+    padding: 52px 20px 36px;
+  }
+
+  .page-intro .container,
+  .va-intro .container,
+  .di-intro .container {
+    width: 100%;
+  }
+
+  .page-title,
+  .va-title,
+  .di-title {
+    font-size: clamp(2rem, 7vw, 2.8rem);
+    line-height: 1.05;
+    margin-bottom: 18px;
+  }
+
+  .page-text,
+  .va-text,
+  .di-text,
+  .page-intro p,
+  .va-intro p,
+  .di-intro p {
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 100%;
+  }
+
+  /* ---------- Bloques editoriales ---------- */
+  .va-editorial,
+  .di-editorial,
+  .editorial-section {
+    padding: 20px 16px 10px;
+  }
+
+  .va-block,
+  .di-block,
+  .editorial-block,
+  .va-block.va-block--reverse,
+  .di-block.di-block--reverse,
+  .editorial-block.editorial-block--reverse {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+
+  .va-block__media,
+  .va-block__content,
+  .di-block__media,
+  .di-block__content,
+  .editorial-block__media,
+  .editorial-block__content {
+    width: 100%;
+  }
+
+  .va-block__content h2,
+  .di-block__content h2,
+  .editorial-block__content h2,
+  .va-block__content h3,
+  .di-block__content h3,
+  .editorial-block__content h3 {
+    font-size: 1.5rem;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+
+  .va-block__content p,
+  .di-block__content p,
+  .editorial-block__content p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* ---------- Imágenes / renders ---------- */
+  .va-block__media img,
+  .di-block__media img,
+  .editorial-block__media img,
+  .va-image,
+  .di-image,
+  .interior-image,
+  .render-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 18px;
+  }
+
+  /* ---------- Videos ---------- */
+  .va-video-wrap,
+  .di-video-wrap,
+  .video-wrap {
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .va-video,
+  .di-video,
+  .video-wrap video,
+  .va-block video,
+  .di-block video {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ---------- Galerías / grids ---------- */
+  .va-gallery,
+  .di-gallery,
+  .gallery-grid,
+  .renders-grid,
+  .interiors-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .va-gallery img,
+  .di-gallery img,
+  .gallery-grid img,
+  .renders-grid img,
+  .interiors-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+  }
+
+  /* ---------- Cards / destacados ---------- */
+  .va-cards,
+  .di-cards,
+  .services-grid,
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .va-card,
+  .di-card,
+  .service-card,
+  .feature-card {
+    width: 100%;
+  }
+
+  /* ---------- CTA ---------- */
+  .va-cta,
+  .di-cta,
+  .page-cta {
+    padding: 28px 16px;
+  }
+
+  .va-cta__inner,
+  .di-cta__inner,
+  .page-cta__inner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .va-cta__btn,
+  .di-cta__btn,
+  .page-cta__btn {
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+    padding: 14px 18px;
+  }
+}
+
+
+/* =========================================================
+   CELULARES CHICOS
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .header-min {
+    padding: 12px 14px;
+  }
+
+  .header-min__logo {
+    gap: 8px;
+  }
+
+  .header-min__title {
+    font-size: 0.88rem;
+  }
+
+  .header-min__actions {
+    gap: 8px;
+  }
+
+  .header-min__link,
+  .header-min__btn {
+    font-size: 0.86rem;
+  }
+
+  .header-min__btn {
+    padding: 9px 12px;
+  }
+
+  .page-hero,
+  .page-hero--video,
+  .va-hero,
+  .di-hero {
+    min-height: 46vh;
+  }
+
+  .page-intro,
+  .va-intro,
+  .di-intro {
+    padding: 42px 16px 30px;
+  }
+
+  .page-title,
+  .va-title,
+  .di-title {
+    font-size: clamp(1.8rem, 8vw, 2.3rem);
+  }
+
+  .page-text,
+  .va-text,
+  .di-text,
+  .page-intro p,
+  .va-intro p,
+  .di-intro p {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .va-block,
+  .di-block,
+  .editorial-block {
+    gap: 18px;
+    margin-bottom: 40px;
+  }
+
+  .va-block__content h2,
+  .di-block__content h2,
+  .editorial-block__content h2,
+  .va-block__content h3,
+  .di-block__content h3,
+  .editorial-block__content h3 {
+    font-size: 1.3rem;
+  }
+
+  .va-block__content p,
+  .di-block__content p,
+  .editorial-block__content p {
+    font-size: 0.96rem;
+  }
+
+  .va-gallery,
+  .di-gallery,
+  .gallery-grid,
+  .renders-grid,
+  .interiors-grid,
+  .va-cards,
+  .di-cards,
+  .services-grid,
+  .features-grid {
+    gap: 12px;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .va-cta__btn,
+  .di-cta__btn,
+  .page-cta__btn {
+    padding: 13px 16px;
+    font-size: 0.95rem;
+  }
+}
